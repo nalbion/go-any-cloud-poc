@@ -1,0 +1,13 @@
+language: go
+go: 1.6.2
+
+build:
+  pre_ci_boot:
+    image_name: nalbion/go-lambda-build
+    image_tag: latest
+    pull: true
+  ci:
+    - export GOPATH=/go:/root
+    - make test lambda/index.zip
+  post_ci:
+    - mv testresults codecoverage shippable

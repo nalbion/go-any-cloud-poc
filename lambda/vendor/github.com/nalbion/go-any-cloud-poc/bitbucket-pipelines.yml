@@ -1,0 +1,34 @@
+image: nalbion/go-lambda-build
+
+pipelines:
+  default:
+    - step:
+        # Build for Lambda
+        image: nalbion/go-lambda-build
+        script:
+          # GOPATH: /go, PWD: /opt/atlassian/pipelines/agent/build - need to copy files and move to a Go path
+          - PACKAGE_PATH="${GOPATH}/src/bitbucket.org/${BITBUCKET_REPO_OWNER}/${BITBUCKET_REPO_SLUG}"
+          - mkdir -pv "${PACKAGE_PATH}"
+          - tar -cO --exclude-vcs --exclude=bitbucket-pipelines.yml . | tar -xv -C "${PACKAGE_PATH}"
+          - cd "${PACKAGE_PATH}"
+          - make test lambda/index.zip
+          #- make upload-artifacts
+  branches:
+    test:
+      - step:
+          script:
+            - make deploy-test
+    master:
+      - step:
+          script:
+            - make deploy-prod
+#  tags:
+#    release-*:
+#      - step:
+#          script:
+#            - make deploy-prod
+  custom:
+    deploy-to-prod:
+      - step:
+          script:
+            - make deploy-prod

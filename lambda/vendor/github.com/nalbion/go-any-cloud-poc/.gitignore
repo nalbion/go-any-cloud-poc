@@ -1,0 +1,7 @@
+.build-helper/
+*.so
+*.zip
+shippable/
+node_modules
+codecoverage/
+testresults/
