@@ -1,0 +1,113 @@
+{
+	"comment": "",
+	"ignore": "test",
+	"package": [
+		{
+			"checksumSHA1": "3jUDHjtg1OofL6M6rnT8xfbhbQk=",
+			"path": "appengine",
+			"revision": ""
+		},
+		{
+			"checksumSHA1": "ASB4VLt4vyzKCcsS42xBEyjNang=",
+			"path": "appengine/file",
+			"revision": ""
+		},
+		{
+			"checksumSHA1": "XkppxjcSE3bfKIia7kqwC2NOhps=",
+			"path": "appengine/urlfetch",
+			"revision": ""
+		},
+		{
+			"checksumSHA1": "tNzaELJG2EIUr4CBGysXTV+ZQyY=",
+			"path": "appengine_internal",
+			"revision": ""
+		},
+		{
+			"checksumSHA1": "Gqml3IUYFUYzDWC5YeIoUgjeMAo=",
+			"path": "appengine_internal/app_identity",
+			"revision": ""
+		},
+		{
+			"checksumSHA1": "h/whIJgr/jUpvodA9CDEIdhEmwI=",
+			"path": "appengine_internal/base",
+			"revision": ""
+		},
+		{
+			"checksumSHA1": "tEiIiOuM9k9YoqDRkhL/WWSnUUk=",
+			"path": "appengine_internal/blobstore",
+			"revision": ""
+		},
+		{
+			"checksumSHA1": "wyRnwEoh+8GRcPXYZbF1Q8Wxb3Y=",
+			"path": "appengine_internal/datastore",
+			"revision": ""
+		},
+		{
+			"checksumSHA1": "CM/E9/qn9tDVfQzl8CjQ6kCXh7s=",
+			"path": "appengine_internal/github.com/golang/protobuf/proto",
+			"revision": ""
+		},
+		{
+			"checksumSHA1": "LOrcbTzy4PbKQozsge6CZbIozWY=",
+			"path": "appengine_internal/log",
+			"revision": ""
+		},
+		{
+			"checksumSHA1": "TOuDk/FNP6fbxyvPs4ptI3IClwI=",
+			"path": "appengine_internal/modules",
+			"revision": ""
+		},
+		{
+			"checksumSHA1": "e3No5X7BL6Z8dbRDE9bd1CydjX8=",
+			"path": "appengine_internal/remote_api",
+			"revision": ""
+		},
+		{
+			"checksumSHA1": "JoDHkriyMSwTSHx8ufAGKAjCV+M=",
+			"path": "appengine_internal/runtime_config",
+			"revision": ""
+		},
+		{
+			"checksumSHA1": "UOspY/4awRAFtoaOBG9XfMhetic=",
+			"path": "appengine_internal/urlfetch",
+			"revision": ""
+		},
+		{
+			"checksumSHA1": "fRx7lK9KYqbUUQzwWmI1zFs3lpw=",
+			"path": "github.com/eawsy/aws-lambda-go-core",
+			"revision": "aa9f999391868fb36d03d0983c39c431a5ecc26d",
+			"revisionTime": "2017-01-19T18:08:21Z"
+		},
+		{
+			"checksumSHA1": "5VlG9yrFXHqNqmsVErJS29xFQIc=",
+			"path": "github.com/eawsy/aws-lambda-go-core/service/lambda/runtime",
+			"revision": "aa9f999391868fb36d03d0983c39c431a5ecc26d",
+			"revisionTime": "2017-01-19T18:08:21Z"
+		},
+		{
+			"checksumSHA1": "bAS7Z0YjF3xE9gMHomUIUq4zS88=",
+			"path": "github.com/eawsy/aws-lambda-go-event",
+			"revision": "922848afc21ebb4564674fad1aff5ca326a6aa91",
+			"revisionTime": "2017-01-20T22:56:49Z"
+		},
+		{
+			"checksumSHA1": "BTSd6Pn06tSb1nBa1rIOwtVNH+8=",
+			"path": "github.com/eawsy/aws-lambda-go-event/service/lambda/runtime/event/apigatewayproxyevt",
+			"revision": "922848afc21ebb4564674fad1aff5ca326a6aa91",
+			"revisionTime": "2017-01-20T22:56:49Z"
+		},
+		{
+			"checksumSHA1": "f2W1pP8041idUOTyVN+w+EucrmY=",
+			"path": "github.com/garyburd/go-oauth",
+			"revision": "18d3217f4d38f106335b3a2b2a08ce1c9299d009",
+			"revisionTime": "2016-11-12T15:19:58Z"
+		},
+		{
+			"checksumSHA1": "CuxrDO/o0+6wdJQAAUHsXPxNjKA=",
+			"path": "github.com/garyburd/go-oauth/oauth",
+			"revision": "18d3217f4d38f106335b3a2b2a08ce1c9299d009",
+			"revisionTime": "2016-11-12T15:19:58Z"
+		}
+	],
+	"rootPath": "github.com/nalbion/go-any-cloud-poc"
+}
