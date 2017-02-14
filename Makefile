@@ -6,7 +6,7 @@ PROJECT ?= src/github.com/nalbion/go-any-cloud-poc
 # For use on developer machines - runs make within a Docker container
 dev:
 	@docker run --rm \
-		-v $(PWD)/vendor:/go/src -v $(PWD):/tmp \
+		-v $(PWD)/vendor:/go/src -v $(PWD)/lib:/go/$(PROJECT)/lib -v $(PWD):/tmp \
 		-e "HANDLER=$(HANDLER)" -e "PACKAGE=$(PACKAGE)" \
 		nalbion/go-lambda-build make lambda/$(PACKAGE).zip
 
