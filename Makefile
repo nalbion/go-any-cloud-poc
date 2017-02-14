@@ -6,18 +6,15 @@ PROJECT ?= src/github.com/nalbion/go-any-cloud-poc
 # For use on developer machines - runs make within a Docker container
 dev:
 	@docker run --rm \
-		-v $(PWD):/go/$(PROJECT) \
+		-v $(PWD)/vendor:/go/src -v $(PWD):/tmp \
 		-e "HANDLER=$(HANDLER)" -e "PACKAGE=$(PACKAGE)" \
-		-w /go/$(PROJECT) \
 		nalbion/go-lambda-build make lambda/$(PACKAGE).zip
-#		nalbion/go-lambda-build make test lambda/$(PACKAGE).zip
 
 # Useful for debugging build/CI issues
 bash:
 	@docker run -it \
-		-v $(PWD):/go/$(PROJECT) \
+		-v $(PWD)/vendor:/go/src -v $(PWD):/tmp \
 		-e "HANDLER=$(HANDLER)" -e "PACKAGE=$(PACKAGE)" \
-		-w /go/$(PROJECT) \
 		nalbion/go-lambda-build /bin/bash
 
 # Build the Docker image for building for AWS Lambda
@@ -32,7 +29,7 @@ docker-push:
 
 test:
 	@echo -ne "vet..."\\r
-	@govendor vet +local
+	@go vet
 	@echo -ne "tests..."\\r
 	@mv lambda/ .tmp/
 	@mkdir -p testresults codecoverage
