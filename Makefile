@@ -9,7 +9,8 @@ dev:
 		-v $(PWD):/go/$(PROJECT) \
 		-e "HANDLER=$(HANDLER)" -e "PACKAGE=$(PACKAGE)" \
 		-w /go/$(PROJECT) \
-		nalbion/go-lambda-build make test lambda/$(PACKAGE).zip
+		nalbion/go-lambda-build make lambda/$(PACKAGE).zip
+#		nalbion/go-lambda-build make test lambda/$(PACKAGE).zip
 
 # Useful for debugging build/CI issues
 bash:
@@ -46,12 +47,10 @@ test:
 
 # Build Lambda function packages - includes a Python shim to the Go code
 lambda/$(PACKAGE).zip: clean
-	@mv vendor/github.com/eawsy/ lambda/unvendor
 	@go build -buildmode=plugin -ldflags='-w -s' -o lambda/$(HANDLER).so ./lambda
 	@chown $(shell stat -c '%u:%g' .) lambda/$(HANDLER).so
 	@cd lambda; zip -q $(PACKAGE).zip $(HANDLER).so
 	@cd lambda; mv /shim $(HANDLER); zip -q -r $(PACKAGE).zip $(HANDLER); mv $(HANDLER) /shim
-	@mv lambda/unvendor/ vendor/github.com/eawsy
 	@chown $(shell stat -c '%u:%g' .) lambda/$(PACKAGE).zip
 	@echo DONE!
 

@@ -2,6 +2,7 @@
 package stub
 
 import (
+	"appengine/file"
 	"github.com/nalbion/go-any-cloud-poc/lib/rest"
 	"io"
 	"net/http"
@@ -9,18 +10,17 @@ import (
 	"os"
 	"strings"
 	"testing"
-	"appengine/file"
 )
 
 type Client struct {
 	BasePath string
-	t *testing.T
+	t        *testing.T
 }
 
 func NewClient(basePath string, t *testing.T) *Client {
 	return &Client{
 		BasePath: basePath,
-		t: t,
+		t:        t,
 	}
 }
 
@@ -52,7 +52,7 @@ func (c *Client) sendRequest(method string, urlStr string, body io.Reader, callb
 	filePath = strings.TrimLeft(filePath, "/") + ".json"
 
 	if c.t != nil {
-		c.t.Logf("Stubbing %s %s \nwith %s", method, urlStr, c.BasePath + "/" + filePath)
+		c.t.Logf("Stubbing %s %s \nwith %s", method, urlStr, c.BasePath+"/"+filePath)
 	}
 
 	file, err := os.Open(c.BasePath + "/" + filePath)

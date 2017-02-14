@@ -7,8 +7,8 @@ import (
 	"appengine"
 	"appengine/urlfetch"
 
-	"github.com/nalbion/go-any-cloud-poc/lib/rest"
 	"github.com/garyburd/go-oauth/oauth"
+	"github.com/nalbion/go-any-cloud-poc/lib/rest"
 	"github.com/pkg/errors"
 	"io"
 	"net/url"

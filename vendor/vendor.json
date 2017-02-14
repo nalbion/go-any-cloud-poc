@@ -107,6 +107,12 @@
 			"path": "github.com/garyburd/go-oauth/oauth",
 			"revision": "18d3217f4d38f106335b3a2b2a08ce1c9299d009",
 			"revisionTime": "2016-11-12T15:19:58Z"
+		},
+		{
+			"checksumSHA1": "ynJSWoF6v+3zMnh9R0QmmG6iGV8=",
+			"path": "github.com/pkg/errors",
+			"revision": "248dadf4e9068a0b3e79f02ed0a610d935de5302",
+			"revisionTime": "2016-10-29T09:36:37Z"
 		}
 	],
 	"rootPath": "github.com/nalbion/go-any-cloud-poc"

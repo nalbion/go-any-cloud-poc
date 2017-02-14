@@ -1,11 +1,11 @@
 package eawsy
 
 import (
-	"github.com/nalbion/go-any-cloud-poc/lib/rest"
-	rhttp "github.com/nalbion/go-any-cloud-poc/lib/rest/http"
 	"encoding/json"
 	"fmt"
 	"github.com/eawsy/aws-lambda-go-event/service/lambda/runtime/event/apigatewayproxyevt"
+	"github.com/nalbion/go-any-cloud-poc/lib/rest"
+	rhttp "github.com/nalbion/go-any-cloud-poc/lib/rest/http"
 	"github.com/pkg/errors"
 	"net/http"
 )
@@ -59,5 +59,5 @@ func (evt *apigatewayproxyevt.Event) GetBody() (interface{}, error) {
 }
 */
 func (ir *InboundRequest) NewClient(header http.Header) rest.Client {
-	return InboundRequest(header)
+	return rhttp.NewClient(header)
 }
